@@ -66,7 +66,7 @@ def BookCU(request):
     data = json.loads(request.body)
     # Check values contain special symbol 
     for i in data:
-        if contains_special_characters(data[i]) and i not in 'pricepublished_date':
+        if contains_special_characters(str(data[i])) and i not in 'pricepublished_date':
             return response.Response({'detail': i + ' contains invalid character'}, status=status.HTTP_400_BAD_REQUEST)
     # Check lacking of attributes in body    
     loss_atts = list(data_integrety_lack_check([field.name for field in Book._meta.get_fields()], data.keys()))
