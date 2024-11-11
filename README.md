@@ -6,6 +6,7 @@ Setting up for the project
 - open project
 - install library of project by running command: pip install -r requirements.txt
 - Go to bookmanagement folder: cd bookmanagement
+- Run command : python manage.py migrate
 - Run project by command: python manage.py runserver
 - Then import apis document into postman
 - APIs testing
